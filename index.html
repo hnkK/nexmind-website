@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
+    <meta property="og:url" content="https://nexmind.be/" />
+    <meta property="og:type" content="Nexmind" />
+    <meta property="og:title" content="Nexmind - Digitalisez-vous" />
+    <title>Nexmind - Développement Web Mobile</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="burger_menu">
+        <i class="fas fa-bars">
+            <a href="#"></a>
+        </i>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a class="" href="https://www.linkedin.com/company/nexmind/?originalSubdomain=be" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></li>
+            <li><a class="" href="https://www.facebook.com/Nexmind-2357195911228563" target="blank"><i
+                        class="fab fa-facebook-f"></i></a></li>
+            <li><a class="" href="mailto:contact@nexmind.be"><i class="fas fa-envelope"></i></i></a></li>
+        </ul>
+    </div>
+
+    <section class="header">
+        <div class="logo">
+            <img src="assets/images/nexmind-logo.png" alt="">
+            <h2 class="animate__flipInX">Digitalisez-vous avec une<br> solution Web - Mobile<br> sur mesure.</h2>
+        </div>
+    </section>
+
+    <div class="accroche">
+        <h1 class="animate__flipInX">Un projet mobile ?<br> Une solution flexible</h1>
+    </div>
+
+    <section class="section_devis">
+        <img src="assets/images/triangle_orange.png">
+        <div class=" devis">
+            <h2>Votre devis,<br> le temps d'un café</h2>
+            <div class="button">
+                <a href="application/index.html">Easy App</a>
+            </div>
+            <p>En quelques clics, construisez votre demande et ayez une estimation budgétaire de votre
+                projet.
+                <br>
+                <br>Simple, rapide,
+                elle n'attend que vos idées</p>
+        </div>
+    </section>
+
+    <section class="vos_idees">
+        <h2>
+            Nous sommes là pour vous
+            <br />et vos idées
+        </h2>
+        <div id="idee01" class="etapes_idees">
+            <img src="assets/images/bulb.png" />
+            <p><span>Projet</span><br>Vous avez une idée ou vous souhaitez mettre la technologie au profit de
+                votre business ?</p>
+        </div>
+
+        <div id="idee02" class="etapes_idees">
+            <img src="assets/images/collab.png" />
+
+            <p><span>Réflexion</span><br>Nous vous accompagnons et réfléchissons avec vous à la meilleure
+                solution, selon vos attentes et votre budget.</p>
+        </div>
+        <div id="idee03" class="etapes_idees">
+            <img src="assets/images/coding.png" />
+            <p><span>Développement</span><br>Nous construisons votre solution, restons à jour sur les dernières
+                technologies
+                et suivons l'évolution de votre projet.</p>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="about_team">
+            <h2>Mené par une équipe jeune,<br> dynamique et</h2>
+            <h3>Compétitive et attractive</h3>
+            <p>Nous trouvons toujours une solution à vous offrir qui s'adapte au
+                mieux à votre business plan.
+            </p>
+            <br>
+            <h3>Qualitative</h3>
+            <p>Nous mettons un point d'honneur à ce que chaque projet vous satisfait
+                entièrement vous et votre entreprise
+            </p>
+            <br>
+            <h3>Toujours à la pointe de la technologie</h3>
+            <p>L'expérience utilisateur de vos clients est notre priorité, nous
+                sommes flexibles et à l'écoute de vos besoins
+            </p>
+            <br>
+            <h3>Toujours souriante</h3>
+            <p>Nous vous accueillons avec plaisir.
+            </p>
+        </div>
+        <div class="profile henrard">
+            <img src="assets/images/julien.jpg" alt="" srcset="">
+            <h4>Julien Henrard</h4>
+            <span>CEO, IOS & Web Developer</span>
+            <div class="icon_linkedin">
+                <a href="https://www.linkedin.com/in/julien-henrard-%EF%A3%BF-737280102/" target="blank">
+                    <i id="icon_animation" class="fab fa-linkedin-in">
+                    </i>
+                </a>
+            </div>
+        </div>
+        <div class="profile marot">
+            <img src="assets/images/martin.jpg" alt="" srcset="">
+            <h4>Martin Marot</h4>
+            <span>Android & Web Developer</span>
+            <div id="icon_animation" class="icon_linkedin">
+                <a href="https://www.linkedin.com/in/martin-marot-73342a86/" class="martin"><i
+                        class="fab fa-linkedin-in">
+                    </i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="app" class="clients">
+        <img class="triangle" src="assets/images/triangle haut.png">
+        <h2>Ils nous ont fait confiance,<br> découvrez-les</h2>
+        <div class="container">
+            <div class="flex" v-for="(client, i) in clients" :key="i">
+                <div :id="client.id" class="projet">
+                    <img :src="client.image" alt="" @click="display(client, i)">
+                    <transition name="fade">
+                        <div class="text_project" v-if="client.show" @click="display(client, i)">
+                            <p>{{ client.text }}</p>
+                        </div>
+                    </transition>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_form">
+        <div class="form background_form">
+            <h2>Un message,<br> le temps de votre passage ?</h2>
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                <label for="name" class="form__label">Nom</label>
+            </div>
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                <label for="name" class="form__label">Message</label>
+            </div>
+            <div class="form__group field">
+                <select class="form__field" name="topic" id="">
+                    <option value="">Sujet</option>
+                    <option value="dog">Question projet</option>
+                    <option value="cat">Informations</option>
+                    <option value="cat">Partenariat</option>
+                </select>
+            </div>
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                <label for="name" class="form__label">E-mail</label>
+            </div>
+            <br>
+            <div class="button">
+                <a href="">Envoyer</a>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="texts_phone">
+                <h3>Contact</h3>
+                <p><span>Téléphone</span> <br>0472 62 08 50<br><br>
+                    <span>E-mail</span><br><a href="j.henrard@nexmind.be">Julien Henrard</a><br>
+                    <a href="j.henrard@nexmind.be">j.henrard@nexmind.be</a>
+                    <br><br>
+                    <span>Adresse</span><br> Avenue Joseph Waters 9<br>4130 Tilff (Esneux)</p>
+                <i id="switch" class="fas fa-sun"></i>
+            </div>
+            <div class="phone">
+                <img src="assets/images/phone(2).png">
+            </div>
+        </div>
+    </section>
+
+    <div class="footer"></div>
+
+    <script src="https://kit.fontawesome.com/f57d76244d.js" crossorigin="anonymous"></script>
+    <script src="scripts/vue.min.js"></script>
+    <script src="scripts/jquery_prod.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+</body>
+
+</html>

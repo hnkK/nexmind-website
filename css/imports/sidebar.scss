@@ -1,0 +1,63 @@
+// Sidebar //
+
+.burger_menu {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100px;
+  text-align: center;
+  transition: 0.3s all;
+  i {
+    color: white;
+    font-size: 2em;
+    padding: 1em;
+    text-shadow: black 1px 1px 2px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  z-index: 999;
+  float: left;
+  width: 100px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin-right: -100px;
+  transition: 0.3s all;
+  padding-top: 150px;
+  ul {
+  margin: 0;
+  padding: 0
+    }
+    li {
+      padding: 1em;
+  list-style-type: none;
+    }
+    a {
+  text-decoration: none;
+    }
+    i {
+        color: white;
+  height: 80px;
+  width: 100%;
+  font-size: 40px;
+  line-height: 80px;
+  text-align: center;
+  display: block;
+    }
+    i:hover {
+      color: $orangeNexmind;
+    }
+  }
+
+  .show {
+    margin-right: 0;
+  }
+
+  .rotate {
+        transform: rotate(-90deg);
+  }
